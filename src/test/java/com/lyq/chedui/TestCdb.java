@@ -25,8 +25,8 @@ public class TestCdb extends ExecuteService {
     // "http://frm.cttms.com:8080/framework/services/AppTransportService";
     // private static String www =
     // "http://192.168.1.69/service_center/services/AppTransportService";
-//    private static String www = "http://szyt.net:8180/service_center/services/AppTransportService";
-    private static String www = "http://service.cttms.com:8180/service_center/services/AppTransportService";
+    private static String www = "http://szyt.net:8180/service_center/services/AppTransportService";
+//    private static String www = "http://service.cttms.com:8180/service_center/services/AppTransportService";
     // private static String www =
     // "http://ys.cttms.com/services/AppTransportService";
     private static String accreditId = "nbdemo";
@@ -67,7 +67,7 @@ public class TestCdb extends ExecuteService {
         appFeedbackJson.setAccreditId("nbdemo");
         appFeedbackJson.setUserId("jkx");
         appFeedbackJson.setPassword("jkx168");
-        appFeedbackJson.setContents("意见反馈测试17");
+        appFeedbackJson.setContents("意见反馈测试19");
         appFeedbackJson.setMethodname("saveFeedback");
         appFeedbackJson.setUniqueKey("jkx20160513175040");
         appFeedbackJson.setMobilePhoneInfo("13510551303魅族Note1");
@@ -77,8 +77,8 @@ public class TestCdb extends ExecuteService {
 //        appFeedbackJson.setImageFormat("png");
 //        String filePath = "C:\\Users\\lyq\\Desktop\\jyb.png";
         appFeedbackJson.setImageStreams(new String[]{getImageStream(filePath)});
-        appFeedbackJson.setImageStreams(new String[]{getFile("C:\\Users\\lyq\\Desktop\\w.txt")});
-//        System.out.println(objectToJsonString(appFeedbackJson));
+//        appFeedbackJson.setImageStreams(new String[]{getFile("C:\\Users\\lyq\\Desktop\\w.txt")});
+        System.out.println(objectToJsonString(appFeedbackJson));
         System.out.println(execute(objectToJsonString(appFeedbackJson)));
 //        System.out.println(getFile("D:\\用户资料\\Desktop\\req.txt"));
 //        System.out.println(execute(getFile("D:\\用户资料\\Desktop\\req.txt")));
