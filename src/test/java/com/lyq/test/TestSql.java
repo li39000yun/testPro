@@ -12,7 +12,6 @@ import java.math.RoundingMode;
  */
 public class TestSql extends AbstractDAO {
 
-    @Test
     public void testSql() {
         StringBuffer sb = new StringBuffer();
         appendEscape(sb, "ww'");

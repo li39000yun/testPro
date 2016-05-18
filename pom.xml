@@ -64,11 +64,51 @@
             <artifactId>axis2-adb-codegen</artifactId>
             <version>1.7.1</version>
         </dependency>
+        <!-- http://mvnrepository.com/artifact/org.apache.axis2/axis2-transport-local -->
+        <dependency>
+            <groupId>org.apache.axis2</groupId>
+            <artifactId>axis2-transport-local</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+        <!-- http://mvnrepository.com/artifact/org.apache.axis2/axis2-transport-http -->
+        <dependency>
+            <groupId>org.apache.axis2</groupId>
+            <artifactId>axis2-transport-http</artifactId>
+            <version>1.7.2</version>
+        </dependency>
         <!-- httpclient -->
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
             <version>4.5.2</version>
+        </dependency>
+        <!-- http://mvnrepository.com/artifact/com.belerweb/pinyin4j -->
+        <dependency>
+            <groupId>com.belerweb</groupId>
+            <artifactId>pinyin4j</artifactId>
+            <version>2.5.0</version>
+        </dependency>
+        <!-- 本地jar包 kingsoft -->
+        <dependency>
+            <groupId>com.lyq.kingsoft</groupId>
+            <artifactId>kingsoft</artifactId>
+            <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/kingsoft.jar</systemPath>
+        </dependency>
+        <!-- 本地jar包 webp-imageio -->
+        <dependency>
+            <groupId>com.lyq.webpimageio</groupId>
+            <artifactId>webp-imageio</artifactId>
+            <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/webp-imageio.jar</systemPath>
+        </dependency>
+        <!-- http://mvnrepository.com/artifact/de.marcreichelt/webp-backport -->
+        <dependency>
+            <groupId>de.marcreichelt</groupId>
+            <artifactId>webp-backport</artifactId>
+            <version>0.4.7</version>
         </dependency>
     </dependencies>
     <build>

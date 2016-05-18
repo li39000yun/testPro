@@ -13,7 +13,6 @@ import java.util.Map;
  */
 public class TestJsoup {
 
-    @Test
     public void testCustoms() throws IOException {
 //        String url = "http://query.customs.gov.cn/MNFTQ";
         String url = "http://www.customs.gov.cn/tabid/49564/Default.aspx";
