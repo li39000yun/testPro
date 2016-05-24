@@ -25,8 +25,8 @@ public class TestCdb extends ExecuteService {
     // "http://frm.cttms.com:8080/framework/services/AppTransportService";
     // private static String www =
     // "http://192.168.1.69/service_center/services/AppTransportService";
-    private static String www = "http://szyt.net:8180/service_center/services/AppTransportService";
-//    private static String www = "http://service.cttms.com:8180/service_center/services/AppTransportService";
+//    private static String www = "http://szyt.net:8180/service_center/services/AppTransportService";
+    private static String www = "http://service.cttms.com:8180/service_center/services/AppTransportService";
     // private static String www =
     // "http://ys.cttms.com/services/AppTransportService";
     private static String accreditId = "nbdemo";

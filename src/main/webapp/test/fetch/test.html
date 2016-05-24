@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script type="text/javascript">
+    //写cookies
+    function setCookiess(name,value)
+    {
+        console.info("ee")
+        var Days = 30;
+        var exp = new Date();
+        exp.setTime(exp.getTime() + Days*24*60*60*1000);
+        document.getElementById("t").value=name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+        console.info("ee2")
+        console.info(name + "="+ escape (value) + ";expires=" + exp.toGMTString())
+
+    }
+</script>
+<body>
+33
+<input id="t">
+44
+</body>
+<script type="text/javascript">
+    setCookiess("222","333");
+</script>
+</html>
