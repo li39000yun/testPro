@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="webp-imageio">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../fuzhujar/webp-imageio.jar!/" />
+      <root url="file://$PROJECT_DIR$/../../fuzhujar/webp" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/../../fuzhujar/webp" recursive="false" />
+  </library>
+</component>

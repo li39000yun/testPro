@@ -27,7 +27,11 @@
 				text : '百度',
 				id : 'baidu',
 				url : 'http://www.baidu.com'
-			} ],
+			}, {
+                text : 'jsonUtil',
+                id : 'jsonUtil',
+                url : 'test/json/jsonUtil.jsp'
+            } ],
 			onClick : function(node) {
 				if ($('#menu').tree('isLeaf', node.target)) {
 					addTab(node.text, node.url, node.id);
