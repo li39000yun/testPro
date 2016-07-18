@@ -22,36 +22,42 @@ public class TestServiceCenter {
     private static String encryptKey = "4670af91302f9beadb49a802dbb0dcaa";
 
     public static void main(String[] args) throws Exception {
-        String key = "一个测试字符串的旅行";
-        byte[] bytes= GZipHelper.StringToGZip(key);
-        System.out.println(bytes);
-        System.out.println(GZipHelper.GZipToString(bytes));
-
-        key = "H4sIAAAAAAAAAA==";
-        BASE64Decoder base64 = new BASE64Decoder();
-        bytes = base64.decodeBuffer(key);
-        System.out.println(bytes);
-        System.out.println(GZipHelper.GZipToString(bytes));
-
+        testSyfy();
     }
 
+    /**
+     * 嵩屿码头费用抓取测试
+     * @throws Exception
+     */
     public static void testSyfy() throws Exception {
-//        H4sIAAAAAAAAAA==
-        String www = "http://szyt.net:8180/service_center/services/FetchService";
+        String www = "http://service.cttms.com:8180/service_center/services/FetchService";
         FetchSearch serch = new FetchSearch();
+        serch.setRegionId(4);
+        serch.setDock("XMSYFY");
+
 //        serch.setBookingNo("1811X16FWD30099R1");
 //        serch.setContainerNo("MEDU7332458");
 //        serch.setBookingNo("576017283");
 //        serch.setContainerNo("MRKU7187200");
-//        serch.setDock("XMSYFY");
-//        serch.setRegionId(4);
 
-        serch.setBookingNo("XMPC514049");
-        serch.setContainerNo("CMAU2180462");
-        serch.setDock("XMGJHGFY");
-        serch.setRegionId(4);
+        serch.setBookingNo("1811X0160565030J1");
+        serch.setContainerNo("MEDU9531572");
 
 
+//        serch.setBookingNo("XMPC514049");
+//        serch.setContainerNo("CMAU2180462");
+//        serch.setDock("XMGJHGFY");
+
+
+
+//        [2016-07-12 10:12:56,776 DEBUG] - fetch-center FetchSearch [ regionId=xm , bookingNo=1811X16NPV00223D1 , containerNo=TGHU9638591 , dock=XMGJHGFY]
+//        [2016-07-12 10:12:56,777 DEBUG] - fetch-center - [AbstractFetch] ContainerNo : TGHU9638591-1811X16NPV00223D1
+//                [2016-07-12 10:12:56,944 DEBUG] - fetch-center FetchSearch [ regionId=xm , bookingNo=1811X16NPV00223D1 , containerNo=TCLU5305910 , dock=XMGJHGFY]
+//        [2016-07-12 10:12:56,944 DEBUG] - fetch-center - [AbstractFetch] ContainerNo : TCLU5305910-1811X16NPV00223D1
+//                [2016-07-12 10:12:57,140 DEBUG] - fetch-center FetchSearch [ regionId=xm , bookingNo=APLU077627465 , containerNo=APZU4902260 , dock=XMGJHGFY]
+//        [2016-07-12 10:12:57,140 DEBUG] - fetch-center - [AbstractFetch] ContainerNo : APZU4902260-APLU077627465
+//                [2016-07-12 10:12:57,395 DEBUG] - fetch-center FetchSearch [ regionId=xm , bookingNo=1811X0160565030J1 , containerNo=MEDU9531572 , dock=XMSYFY]
+//        [2016-07-12 10:12:57,395 DEBUG] - fetch-center - [AbstractFetch] ContainerNo : MEDU9531572-1811X0160565030J1
 
         Object[] entryArgs = new Object[] { encryptKey, JSONObject.fromObject(serch).toString()};
         String rvalue = execute(www,"conFetch",entryArgs);

@@ -3,7 +3,7 @@ package com.lyq.mode.strategy;
 /**
  * Created by liyunqaing on 2016/6/25.
  */
-public class ZhaoYun {
+public class Zhaoyun {
     /**
      * 赵云出场了，他根据诸葛亮给他的交代，依次拆开妙计
      */

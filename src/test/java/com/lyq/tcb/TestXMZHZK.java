@@ -43,7 +43,8 @@ public class TestXMZHZK {
 //        }
 
 
-        String url = "http://58.135.76.132:6543/XMPORT/PrepareOrder?para=";
+//        String url = "http://58.135.76.132:6543/XMPORT/PrepareOrder?para=";
+        String url = "http://data.jkx.tuochebao.com/XMPORT/PrepareOrder?para=";
 //        String url = "http://58.135.76.132:6543/XMPORT/PrepareOrder";
         String para = URLEncoder.encode(JSONObject.fromObject(xmzhzk).toString(), "UTF-8");
         System.out.println(url+para);
