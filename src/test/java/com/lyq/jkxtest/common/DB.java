@@ -18,14 +18,14 @@ import java.util.LinkedHashMap;
  */
 public class DB {
 
-	public static String url = "jdbc:mysql://ys.56it.net:3306/gznm";
+	public static String url = "jdbc:mysql://ys.cttms.com:3306/service_center";
 	public static String user = "";
 	public static String password = "";
 	public static Connection conn = null;
 	public static Statement statement = null;
 	public static ResultSet rs = null;
 
-	public static void main(String[] args) throws SQLException {
+	public static void main(String[] args) throws SQLException, InterruptedException {
 		conn = getConn();
 		String sql = "SELECT * FROM information_schema.COLUMNS WHERE TABLE_NAME ='finance_apply_fee' AND TABLE_SCHEMA='product_center';";
 		rs = executeQuery(sql);
