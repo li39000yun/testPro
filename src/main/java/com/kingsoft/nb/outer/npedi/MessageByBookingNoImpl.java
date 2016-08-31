@@ -19,6 +19,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import com.kingsoft.control.Console;
 import org.apache.log4j.Logger;
 import org.htmlparser.NodeFilter;
 import org.htmlparser.Parser;
@@ -108,6 +109,7 @@ public class MessageByBookingNoImpl {
 			if (S_Logger.isDebugEnabled())
 				S_Logger.debug("transit_nb - MessageByBookingNoImpl" + e.getMessage());
 		} finally {
+			WebservicesMonitor.FS_FETCH_NEW_LOGIN.cookieTime = Console.FS_TIME.getNow();
 			if (br != null) {
 				br.close();
 			}

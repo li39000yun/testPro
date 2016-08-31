@@ -14,6 +14,7 @@ import java.io.Reader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+import com.kingsoft.control.Console;
 import org.apache.log4j.Logger;
 
 import com.kingsoft.nb.outer.AbstractOuterFetch;
@@ -34,6 +35,7 @@ public class LoginNewEdi extends AbstractOuterFetch {
 	protected String encoding = "UTF-8";// 编码
 	protected String user = "GUEST";// 用户名
 	protected String password = "guest";// 用户名
+	protected String cookieTime = "";// cookie使用时间
 	// TODO: 2016/8/30
 //	protected String user = "3801237032";// 用户名
 //	protected String password = "223339";// 密码
@@ -91,7 +93,8 @@ public class LoginNewEdi extends AbstractOuterFetch {
 
 					if (html.indexOf("userId") > 0) {
 						login = true;
-						S_Logger.debug("Image Login to " + host + " is OK!");
+                        cookieTime = Console.FS_TIME.getNow();// 设置cookie时间
+                        S_Logger.debug("Image Login to " + host + " is OK!");
 					} else {
 						login = false;
 						S_Logger.debug("Image Login to" + host + " is faild!");
@@ -184,4 +187,5 @@ public class LoginNewEdi extends AbstractOuterFetch {
 	public VoyageInfo[] fetch(String param) throws Exception {
 		return null;
 	}
+
 }

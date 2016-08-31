@@ -347,6 +347,7 @@ public class MessageByContainerNoImpl {
 				S_Logger.debug("transit_nb - MessageByContainerNoImpl" + e.getMessage());
 			e.printStackTrace();
 		} finally {
+			WebservicesMonitor.FS_FETCH_NEW_LOGIN.cookieTime = Console.FS_TIME.getNow();
 			if (br != null) {
 				br.close();
 			}

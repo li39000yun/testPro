@@ -165,7 +165,7 @@ public class ConnectionLog implements MappingTableModel {
     public String toString() {
         String br = "\r\n";
         StringBuilder sb = new StringBuilder();
-        sb.append("时间：").append(operationTime).append(br);
+        sb.append("时间：").append(getOperationTime()).append(br);
         sb.append(" 地址：").append(service).append(br);
         sb.append(" 参数：").append(parameter).append(br);
         sb.append(" 结果：").append(result).append(br);

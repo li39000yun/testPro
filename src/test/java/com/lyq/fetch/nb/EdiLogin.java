@@ -19,8 +19,8 @@ public class EdiLogin {
             System.out.println("第" + i + "次进行登录校验");
             try {
                 System.out.println(Console.FS_TIME.getNow());
-                System.out.println("服务中心:" + Jsoup.connect(url).get().body().text());
-                System.out.println("宁波:" + Jsoup.connect(nburl).get().body().text());
+                System.out.println("服务中心:" + Jsoup.connect(url).timeout(10000).get().body().text());
+                System.out.println("宁波:" + Jsoup.connect(nburl).timeout(10000).get().body().text());
                 System.out.println("-------------------------------------------------------------------");
             } catch (IOException e) {
                 e.printStackTrace();
