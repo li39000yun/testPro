@@ -25,7 +25,8 @@ public class GetShipStateInfo {
 
         Connection.Response response =
                 Jsoup.connect(url + "/ShipToInfo/GetShipStateInfo")
-                        .data("para", "141600175034")//提单号
+//                        .data("para", "141600175034")//提单号
+                        .data("para", "141600186001")//提单号
                         .data("portCode", "0217")//地区代码
 //                        .data("para", "OOLU2575473270")//提单号
 //                        .data("portCode", "0202")//地区代码
@@ -50,6 +51,8 @@ public class GetShipStateInfo {
 //                        .data("portCode", "0217")//地区代码
                         .data("para", "OOLU2575473270")//提单号
                         .data("portCode", "0202")//地区代码
+//                        .data("para", "141600186001")//提单号
+//                        .data("portCode", "0217")//地区代码
                         .ignoreContentType(true)
                         .timeout(60000 * 5)
                         .execute();

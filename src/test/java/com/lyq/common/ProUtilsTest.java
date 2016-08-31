@@ -1,6 +1,6 @@
 package com.lyq.common;
 
-import net.sf.javavp8decoder.imageio.WebPImageReader;
+//import net.sf.javavp8decoder.imageio.WebPImageReader;
 import org.junit.Test;
 
 import javax.imageio.ImageIO;

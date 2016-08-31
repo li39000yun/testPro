@@ -1,5 +1,6 @@
 package com.lyq.test;
 
+import com.kingsoft.control.cryptography.DES;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -16,7 +17,10 @@ public class Yesinfo {
 
     public static void main(String[] d) throws IOException {
 //        new Yesinfo().httPget();
-        new Yesinfo().login();
+//        new Yesinfo().login();
+        DES des = new DES();
+        System.out.println(des.encrypt("pjt"));
+
     }
 
     public void login() throws IOException {
