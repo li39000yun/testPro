@@ -35,7 +35,8 @@ public class LoginNewEdi extends AbstractOuterFetch {
 	protected String encoding = "UTF-8";// 编码
 	protected String user = "GUEST";// 用户名
 	protected String password = "guest";// 用户名
-	protected String cookieTime = "";// cookie使用时间
+	public String cookieTime = "";// cookie使用时间
+	public int num = 0;// 序号
 	// TODO: 2016/8/30
 //	protected String user = "3801237032";// 用户名
 //	protected String password = "223339";// 密码

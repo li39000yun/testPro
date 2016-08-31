@@ -183,7 +183,7 @@ public abstract class AbstractOuterFetch implements OuterFetch {
 		Scanner scanner = new Scanner(System.in);
 		code = scanner.nextLine();
 		System.out.println("code:"+code);
-		scanner.close();
+//		scanner.close();
 		return code ;
 		// TODO
 
