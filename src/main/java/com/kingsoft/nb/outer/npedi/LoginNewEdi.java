@@ -33,13 +33,13 @@ import com.kingsoft.nb.outer.VoyageInfo;
 public class LoginNewEdi extends AbstractOuterFetch {
 	private static Logger S_Logger = Logger.getLogger(LoginNewEdi.class);
 	protected String encoding = "UTF-8";// 编码
-	protected String user = "GUEST";// 用户名
-	protected String password = "guest";// 用户名
+//	protected String user = "GUEST";// 用户名
+//	protected String password = "guest";// 用户名
 	public String cookieTime = "";// cookie使用时间
 	public int num = 0;// 序号
 	// TODO: 2016/8/30
-//	protected String user = "3801237032";// 用户名
-//	protected String password = "223339";// 密码
+	protected String user = "3801237032";// 用户名
+	protected String password = "223339";// 密码
 
 
 	protected String host = "www.npedi.com";// 主机域名地址
@@ -150,7 +150,7 @@ public class LoginNewEdi extends AbstractOuterFetch {
 			while ((strLine = br.readLine()) != null) {
 				html.append(strLine + "\r\n");
 			}
-            System.out.println("isKeepConnection:" + html);
+            System.out.println("isKeepConnection:" + html.toString().trim());
         } catch (Exception e) {
 			if (S_Logger.isDebugEnabled())
 				S_Logger.debug("transit_nb - LoginNewEdi" + e.getMessage());
@@ -176,7 +176,7 @@ public class LoginNewEdi extends AbstractOuterFetch {
 		} else {
 			login = false;
 		}
-        System.out.println("isKeepConnection:" + login);
+//        System.out.println("isKeepConnection:" + login);
         if (S_Logger.isDebugEnabled())
 			S_Logger.debug("transit_nb - LoginNewEdi isKeepConnection result : "+ login +"  result:"+html);
 	}

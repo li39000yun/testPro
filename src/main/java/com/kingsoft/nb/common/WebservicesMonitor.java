@@ -6,14 +6,17 @@
  */
 package com.kingsoft.nb.common;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import com.kingsoft.control.Console;
 import com.kingsoft.control.database.Connection;
 import com.kingsoft.control.database.ConnectionProvider;
 import com.kingsoft.control.database.ConnectionProviderFactory;
 import com.kingsoft.control.tasks.AbstractLifeCycle;
 import com.kingsoft.control.tasks.LifeCycle;
+import com.kingsoft.control.util.StringManage;
 import com.kingsoft.nb.dao.entity.manager.ServiceCenter;
 import com.kingsoft.nb.dao.entity.system.ColumnSetup;
 import com.kingsoft.nb.dao.entity.system.GlobalVariables;
@@ -42,6 +45,7 @@ public class WebservicesMonitor extends AbstractLifeCycle {
 	public static LoginEdi FS_FETCH_LOGIN = null;// 服务中心webservices接口连接参数对象
 	public static LoginNewEdi FS_FETCH_NEW_LOGIN = null;// 宁波新版EDI连接参数对象
 	public static GlobalVariables FS_FETCH_OUT = null;// 查询外抓取设置
+	public static List<LoginNewEdi> FS_EDI_LIST = new ArrayList<LoginNewEdi>();// EDI链接池
 
 	@Override
 	public void afterStarted(LifeCycle arg0, Object... arg1) throws Exception {
@@ -142,4 +146,72 @@ public class WebservicesMonitor extends AbstractLifeCycle {
 			FS_Column_Setups.put(accreditId, columnSetups);
 		}
 	}
+
+	/**
+	 * 初始化EDI链接数
+	 *
+	 * @param num
+	 * @return
+	 */
+	public static List<LoginNewEdi> initEdiList(int num) {
+		List<LoginNewEdi> ediList = new ArrayList<LoginNewEdi>();
+		LoginNewEdi edi;
+		for (int i = 0; i < num; i++) {
+			edi = new LoginNewEdi();
+			try {
+				edi.login();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			edi.num = ediList.size();
+			ediList.add(edi);
+		}
+		return ediList;
+	}
+
+	/**
+	 * 获取EDI链接
+	 * @return
+     */
+	public synchronized static LoginNewEdi getEDI() {
+		LoginNewEdi edi = null;
+		String now = Console.FS_TIME.getNow();
+		if (WebservicesMonitor.FS_EDI_LIST.size() > 0) {
+			for (int i = 0; i < WebservicesMonitor.FS_EDI_LIST.size(); i++) {
+				LoginNewEdi loginNewEdi = WebservicesMonitor.FS_EDI_LIST.get(i);
+				try {
+					if (!StringManage.isEmpty(loginNewEdi.cookieTime)) {
+						if (Console.FS_TIME.compareSecond(now, loginNewEdi.cookieTime) > 5) {
+							loginNewEdi.isKeepConnection();
+							if (!loginNewEdi.isLogin()) {
+								loginNewEdi.login();
+							}
+							if (loginNewEdi.isLogin()) {
+								edi = loginNewEdi;
+								// 把当前对象放到最后面
+								WebservicesMonitor.FS_EDI_LIST.remove(loginNewEdi);
+								WebservicesMonitor.FS_EDI_LIST.add(loginNewEdi);
+								break;
+							}
+						}
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		}
+
+		if (edi == null) {
+			edi = new LoginNewEdi();
+			try {
+				edi.login();
+				edi.num = WebservicesMonitor.FS_EDI_LIST.size();
+				WebservicesMonitor.FS_EDI_LIST.add(edi);// 添加到列表上
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return edi;
+	}
+
 }

@@ -169,7 +169,7 @@ public class ConnectionLog implements MappingTableModel {
         sb.append(" 地址：").append(service).append(br);
         sb.append(" 参数：").append(parameter).append(br);
         sb.append(" 结果：").append(result).append(br);
-        sb.append(" 备注：").append(remark).append(br);
+//        sb.append(" 备注：").append(remark).append(br);
         return sb.toString();
     }
 }

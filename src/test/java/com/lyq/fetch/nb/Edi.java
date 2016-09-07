@@ -79,16 +79,22 @@ public class Edi {
                     WebservicesMonitor.FS_FETCH_NEW_LOGIN.setCookie2(cookie2);
                 }
                 WebservicesMonitor.FS_FETCH_NEW_LOGIN.isKeepConnection();
+
                 MessageByContainerNoImpl nbEdi = new MessageByContainerNoImpl();
                 int j = 1;
-                for (int i = 1; i < 41; i++) {
-                    System.out.println("第" + i + "次" + Console.FS_TIME.getNow());
-                    System.out.println("cookie:" + WebservicesMonitor.FS_FETCH_NEW_LOGIN.getCookie() + " cookie2:" + WebservicesMonitor.FS_FETCH_NEW_LOGIN.getCookie2());
-                    nbEdi.fetch("ctnno=" + containerNos[j % 4]);
-                    j++;
-                    WebservicesMonitor.FS_FETCH_NEW_LOGIN.isKeepConnection();
-                    Thread.sleep(4000);
-                }
+                System.out.println("cookie:" + WebservicesMonitor.FS_FETCH_NEW_LOGIN.getCookie() + " cookie2:" + WebservicesMonitor.FS_FETCH_NEW_LOGIN.getCookie2());
+                nbEdi.fetch("ctnno=" + containerNos[j % 4]);
+
+//                MessageByContainerNoImpl nbEdi = new MessageByContainerNoImpl();
+//                int j = 1;
+//                for (int i = 1; i < 41; i++) {
+//                    System.out.println("第" + i + "次" + Console.FS_TIME.getNow());
+//                    System.out.println("cookie:" + WebservicesMonitor.FS_FETCH_NEW_LOGIN.getCookie() + " cookie2:" + WebservicesMonitor.FS_FETCH_NEW_LOGIN.getCookie2());
+//                    nbEdi.fetch("ctnno=" + containerNos[j % 4]);
+//                    j++;
+//                    WebservicesMonitor.FS_FETCH_NEW_LOGIN.isKeepConnection();
+//                    Thread.sleep(4000);
+//                }
             } else {
                 System.out.println("未登录");
             }

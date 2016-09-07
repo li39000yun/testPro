@@ -12,6 +12,8 @@ import org.apache.axis2.rpc.client.RPCServiceClient;
 import sun.misc.BASE64Decoder;
 
 import javax.xml.namespace.QName;
+import java.net.URLDecoder;
+import java.net.URLEncoder;
 
 /**
  * 服务中心测试类
@@ -22,7 +24,11 @@ public class TestServiceCenter {
     private static String encryptKey = "4670af91302f9beadb49a802dbb0dcaa";
 
     public static void main(String[] args) throws Exception {
-        testSyfy();
+//        testSyfy();
+        String a =   URLEncoder.encode("$33的");
+        System.out.println(a);
+        System.out.println(URLDecoder.decode(a));
+
     }
 
     /**
