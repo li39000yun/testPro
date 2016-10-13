@@ -77,7 +77,6 @@ public abstract class AbstractFetch implements DockService {
 	protected String encoding = StringManage.FS_EMPTY;// 编码
 	protected HttpReturn httpReturn = new HttpReturn();// 返回信息,包含返回html和头信息
 
-	@Override
 	public String conFetch(FetchSearch search) throws Exception {
 		if (S_Logger.isDebugEnabled())
 			S_Logger.debug("fetch-center - [AbstractFetch] ContainerNo : " + search.getContainerNo() + "-" + search.getBookingNo());

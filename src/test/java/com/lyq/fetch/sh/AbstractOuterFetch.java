@@ -32,7 +32,7 @@ public abstract class AbstractOuterFetch  {
 	public String cookie = null;// 网站Cookie值
 	public String cookie2 = null;// SESSION_ID_IN_BIZ
 	public boolean login = false;// 是否已登陆成功
-	private static String S_Project_Path = "";// 项目根目录
+	public static String S_Project_Path = "";// 项目根目录
 
 	static {
 		// 加载项目根目录
@@ -145,6 +145,7 @@ public abstract class AbstractOuterFetch  {
 			conn.setRequestProperty("Cookie", cookie);
 			conn.connect();
 
+			System.out.println(conn.getResponseMessage());
 			inStream = conn.getInputStream();
 			byte[] data = readInputStream(inStream);
 			imageFile = new File(S_Project_Path + "vcode.jpg");

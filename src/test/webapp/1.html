@@ -1,0 +1,222 @@
+<html>
+<head>
+    <title>电子装箱单查询</title>
+    <link href="dataportal.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<table align="center" width="775" height="15" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+    <tr>
+        <td width="42">&nbsp;</td>
+        <td width="152" height="15">
+            <div align="left">
+                <img src="/dataportal/images/dataportal/icons/eplog.jpg" width="152" height="51" border="0">
+            </div></td>
+        <td width="109" background="/dataportal/images/dataportal/icons/division.jpg">&nbsp;</td>
+        <td width="142" height="15"><img src="/dataportal/images/dataportal/icons/dplog.jpg" width="142" height="51" border="0"></td>
+        <td width="115" background="images/dataportal/icons/division.jpg">&nbsp;</td>
+        <td width="59" height="15">
+            <div align="right">
+                <a href="/dataportal/query.do?qn=dp_index"><img src="/dataportal/images/dataportal/icons/indexlog.jpg" width="59" height="51" border="0"></a>
+            </div></td>
+        <td width="61">
+            <div align="right">
+                <a href="/dataportal/myhome.do"><img src="/dataportal/images/dataportal/icons/homelog.jpg" width="61" height="51" border="0"></a>
+            </div></td>
+        <td width="59">
+            <div align="right">
+                <a href="/dataportal/logout.do"><img src="/dataportal/images/dataportal/icons/logout.jpg" width="59" height="51" border="0"></a>
+            </div></td>
+        <td width="36">&nbsp;</td>
+    </tr>
+    </tbody>
+</table>
+<table align="center" width="95%" height="15" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+    <tr>
+        <td width="13">
+            <div align="left">
+                <img src="/dataportal/images/dataportal/icons/stline.jpg" width="13" height="15" border="0">
+            </div></td>
+        <td height="15" background="images/dataportal/icons/bdline.jpg">
+            <div align="center">
+                <img src="images/dataportal/icons/bdline.jpg" width="1" height="15" border="0">
+            </div></td>
+        <td width="19">
+            <div align="right">
+                <img src="/dataportal/images/dataportal/icons/edline.jpg" width="19" height="15" border="0">
+            </div></td>
+    </tr>
+    </tbody>
+</table>
+<table align="center" border="0" cellpadding="0" cellspacing="0" width="90%" style="background:white;border-right: 1px solid #E1E1E1;border-left:1px solid  #E1E1E1">
+    <tbody>
+    <tr>
+        <td> <p>&nbsp;</p>
+            <table align="center" border="0" cellpadding="0" cellspacing="5" width="80%" style="border-top:1px solid #2569B4;border-right: 1px solid #2569B4;border-left:1px solid  #2569B4; border-bottom:1px solid #2569B4">
+                <tbody>
+                <tr>
+                    <td>
+                        <table width="742" align="center" class="style_table">
+                            <tbody>
+                            <tr>
+                                <td align="center" class="cssTitle" background="images/dataportal/icons/captionbg.jpg">电子装箱单查询</td>
+                            </tr>
+                            </tbody>
+                        </table> </td>
+                </tr>
+                <tr>
+                    <td> <br>
+                        <form action="post" onsubmit="return validateCode()">
+                            <div align="center">
+                                <table width="95%" align="center">
+                                    <tbody>
+                                    <tr>
+                                        <td align="right" class="cssFont" nowrap>箱号(*):</td>
+                                        <td align="left" width="60"><input name="ctn0" id="ctn0" class="cssText" type="text" size="60" value=""></td>
+                                        <td align="left"> </td>
+                                        <td align="left"> <font color="red">箱号或提单号必须输入其一</font></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right" class="cssFont" nowrap>提单号(*):</td>
+                                        <td align="left" width="60"><input name="bln0" id="bln0" class="cssText" type="text" size="60" value=""></td>
+                                        <td align="left"> </td>
+                                        <td align="left"> </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right" class="cssFont" nowrap>验证码(*):</td>
+                                        <td align="left" width="60"><input name="captcha" id="captcha" class="cssText" type="text" size="60" value="7aw2"></td>
+                                        <td align="left"> <img src="./query.do?qn=dp_captcha" style="cursor:hand;" width="80" height="28" id="captchaImg" align="absmiddle" onclick="reloadCaptcha()" title="看不清楚，请点击图片换一张！"> <span id="captchaErrorMessage" style="color:red;"></span> </td>
+                                        <td align="left"> </td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td> <input name="pagesize" value="30" type="hidden"> <input name="submit" type="submit" value="执行"> </td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <input name="qid" value="402803af0ecb1a4c010ecb1bb2b3003e" type="hidden">
+                        </form> </td>
+                </tr>
+                <tr>
+                    <td>
+                        <hr size="1"> <p align="center"></p>
+                        <div align="left">
+                            注意：
+                            <ul>
+                                <li>如果同时输入箱号和提单号，则按照箱号进行查询。</li>
+                                <li>运抵报告（电子装箱单回复）是在出口集装箱进港30分钟后由码头发给海关的，<font color="red">在亿通网查询前请先确认出口集装箱是否已进港30分钟，若已进港30分钟仍查询不到相应信息或与预录的电子装箱单数据不符</font>，请联系各家码头进行问询。</li>
+                            </ul>
+                        </div><p></p>
+                        <hr size="1"> </td>
+                </tr>
+                <tr>
+                    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;本网站的数据查询功能是为公众基于货物物流跟踪的一般性查询而设立的，只支持单票查询，不支持大量且频繁的查询请求。如用户使用任何技术手段对我司网站进行任何操作达到我司预警标准，我司有权查封IP。对产生严重后果的，我司将视作恶意攻击，并追究相关法律责任。 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如用户出于业务需要，需进行批量的、实时的查询服务，请致电上海亿通国际股份有限公司业务发展中心垂询相关业务。 <br>联系方式： <br>王先生 座机：20260136 手机：18621138323 E-mail：kdwang@easipass.com <br>吕先生 座机：20260042 手机：18201957310 E-mail：chlv@easipass.com</td>
+                </tr>
+                </tbody>
+            </table> <p>&nbsp;</p> </td>
+    </tr>
+    </tbody>
+</table>
+<table align="center" width="95%" border="0" cellpadding="0" cellspacing="0" background="/dataportal/images/dataportal/icons/r2_c6.jpg">
+    <tbody>
+    <tr>
+        <td width="169" height="25">&nbsp;</td>
+        <td width="1" rowspan="3"><img src="/dataportal/images/dataportal/icons/r6_c1.jpg" width="1" height="96"></td>
+        <td width="352">&nbsp;</td>
+        <td width="1" rowspan="3"><img src="/dataportal/images/dataportal/icons/r6_c1.jpg" width="1" height="96"></td>
+        <td width="190">&nbsp;</td>
+    </tr>
+    <tr>
+        <td width="169" height="42">
+            <div align="center">
+                <img src="/dataportal/images/dataportal/icons/r6_c2.jpg" width="135" height="33">
+            </div></td>
+        <td>
+            <div align="center" class="cssFont">
+                Copyright
+                <span class="cssFooter">©</span> 2001-2007 easipass.com. All Rights Reserved
+                <br> 版权所有 亿通国际股份有限公司 亿通网
+            </div></td>
+        <td width="190">
+            <div align="center">
+                <img src="/dataportal/images/dataportal/icons/r6_c4.jpg" width="115" height="37">
+            </div></td>
+    </tr>
+    <tr>
+        <td width="169">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td width="190">&nbsp;</td>
+    </tr>
+    </tbody>
+</table>
+<div style="width: 1; height: 1; display:none;">
+    <script src="http://s24.cnzz.com/stat.php?id=3631514&amp;web_id=3631514&amp;show=pic" language="JavaScript"></script>
+</div>
+<script>
+    function initCaptchaDialog(isReloadCaptcha){
+        if(isReloadCaptcha){
+            reloadCaptcha();
+        }
+        try
+        {
+            document.getElementById("captcha").value = "";
+            document.getElementById("captchaErrorMessage").innerHTML = "";
+        }
+        catch (e)
+        {
+
+        }
+    }
+
+    function showErrorMessageOnCaptchaIsError(errorMessage){
+        document.getElementById("captchaErrorMessage").innerHTML = errorMessage;
+    }
+
+    function reloadCaptcha()
+    {
+        try
+        {
+            document.getElementById('captchaImg').src = "./query.do?qn=dp_captcha&t="+Math.random();
+            document.getElementById("captcha").value = "";
+            document.getElementById("captchaErrorMessage").innerHTML = "";
+        }
+        catch (e)
+        {
+
+        }
+    }
+
+    function validateCode()
+    {
+        var captcha = document.getElementById("captcha").value;
+        if(captcha.trim() == '')
+        {
+            showErrorMessageOnCaptchaIsError("验证码不能为空！");
+            return false;
+        }
+        if(captcha.trim().length < 4)
+        {
+            showErrorMessageOnCaptchaIsError("验证码错误！");
+            return false;
+        }
+        return true;
+    }
+    initCaptchaDialog(false);
+    if ( top.location !== self.location )
+    {
+        top.location = self.location;
+    }
+</script>
+</body>
+</html>
+
