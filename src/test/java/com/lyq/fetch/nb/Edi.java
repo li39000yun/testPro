@@ -46,6 +46,7 @@ public class Edi {
 //        String containerNo = "TRHU2327440";
 //        String containerNo = "FSCU8820962";
         String[] containerNos = {"TRHU2327440", "FSCU8820962", "KKFU7910818", "TGHU9472005"};
+//        String[] containerNos = {"TRHU2327440"};
 
         boolean isNeedLogin = true;// 需要登录
 //        boolean isNeedLogin = false;// 免登录，使用cookie
@@ -83,7 +84,7 @@ public class Edi {
                 MessageByContainerNoImpl nbEdi = new MessageByContainerNoImpl();
                 int j = 1;
                 System.out.println("cookie:" + WebservicesMonitor.FS_FETCH_NEW_LOGIN.getCookie() + " cookie2:" + WebservicesMonitor.FS_FETCH_NEW_LOGIN.getCookie2());
-                nbEdi.fetch("ctnno=" + containerNos[j % 4]);
+                nbEdi.fetch("ctnno=" + containerNos[0]);
 
 //                MessageByContainerNoImpl nbEdi = new MessageByContainerNoImpl();
 //                int j = 1;

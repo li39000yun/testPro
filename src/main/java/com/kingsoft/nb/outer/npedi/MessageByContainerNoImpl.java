@@ -54,6 +54,7 @@ public class MessageByContainerNoImpl {
 	/** 新版EDI信息 **/
 	private String newWww = "http://www.npedi.com/ediportal-web/scodeco/getEdiScodeco.action";// 根据箱号查询集装箱进门信息
 	private String newGoodsContainers = "http://www.npedi.com/ediportal-web/scodeco/getEdiScodecoBl.action";// 查询集装箱进门货物信息
+//							 http://www.npedi.com/ediportal-web/scodeco/getEdiScodeco.action?blNo=&ctnNo=SUDU8701773&inOrOut=in&ctnOperatorCode=&vesselcode=&voyage=&gotoPage=1&pageCount=10
 
 	public VoyageInfo fetch(String param, Connection connection) throws Exception {
 		VoyageInfo voyageInfo = null;

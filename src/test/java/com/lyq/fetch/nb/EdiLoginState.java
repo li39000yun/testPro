@@ -25,8 +25,10 @@ public class EdiLoginState {
                 WebservicesMonitor.FS_FETCH_NEW_LOGIN = new LoginNewEdi();
             }
             WebservicesMonitor.FS_FETCH_NEW_LOGIN.login = true;
-            String cookie = "JSESSIONID=jeTsB9VEgzxNPVvZUF2XWlt7.edi-webd; Path=/ediportal-web";
-            String cookie2 = "SESSION_ID_IN_BIZ=5ccd6c2634a0fe6eb23d5d22224d8f23; Expires=Fri, 02-Sep-2016 07:54:25 GMT; Path=/";
+//            String cookie = "JSESSIONID=jeTsB9VEgzxNPVvZUF2XWlt7.edi-webd; Path=/ediportal-web";
+//            String cookie2 = "SESSION_ID_IN_BIZ=5ccd6c2634a0fe6eb23d5d22224d8f23; Expires=Fri, 02-Sep-2016 07:54:25 GMT; Path=/";
+             String cookie = "JSESSIONID=xJ20D3lp+-pm++cH6veEPbe7.edi-webd; Path=/ediportal-web";
+            String cookie2 = "SESSION_ID_IN_BIZ=8a65ec29cdf273cb42c6af905b55b74a; Expires=Sat, 15-Oct-2016 00:53:53 GMT; Path=/";
             System.out.println("http://szyt.net:8180/transit_nb/ediLoginSetup.jsp?ediCookie=" + cookie + "&ediCookie2=" + cookie2);
             WebservicesMonitor.FS_FETCH_NEW_LOGIN.setCookie(cookie);
             WebservicesMonitor.FS_FETCH_NEW_LOGIN.setCookie2(cookie2);
