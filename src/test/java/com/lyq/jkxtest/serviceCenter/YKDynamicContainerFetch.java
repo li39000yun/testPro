@@ -35,7 +35,8 @@ public class YKDynamicContainerFetch extends AbstractFetch {
 	public static void main(String[] args) {
 		YKDynamicContainerFetch fetch = new YKDynamicContainerFetch();
 		try {
-			System.out.println(fetch.searchTrackByJsoup("YKCOS","RFCU2141913"));
+//			System.out.println(fetch.searchTrackByJsoup("YKCOS","RFCU2141913"));
+			System.out.println(fetch.searchTrack("YKCOS","HJLU1297778"));
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -96,7 +97,8 @@ public class YKDynamicContainerFetch extends AbstractFetch {
 					"zh-CN,zh;q=0.8,en-US;q=0.5,en;q=0.3");
 			httpPost.setHeader("Connection", "keep-alive");
 			httpPost.setHeader("Cookie",
-					"dljc=success; Market=dljc*CEC3B4B2632F3DF140ADB2C17ADDCE38");
+//					"dljc=success; Market=dljc*CEC3B4B2632F3DF140ADB2C17ADDCE38");
+					"jkxrj=success; Market=jkxrj*220E079F9A5869696246F316DFD922CD");
 			httpPost.setHeader("Host", "www.portx.cn");
 			httpPost.setHeader("Referer",
 					"http://www.portx.cn/ctplatform/ship/date/list1.do");
