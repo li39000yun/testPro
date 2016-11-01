@@ -18,12 +18,9 @@
 <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
 <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-    // 测试
-    function testPost() {
-        console.info($('#mailForm').serialize());
-        console.info(lyq.basePath);
+    // 发送邮件
+    function sendMail() {
         $.post(lyq.basePath+"servlet/Mail", $('#mailForm').serialize(), function (data) {
-            console.info(data);
             alert(data);
         });
     }
@@ -55,7 +52,7 @@
                 <tr>
                     <td>3</td>
                     <td>邮箱密码</td>
-                    <td><input id="pass" type="password" name="mail.pass" value="Luke123"></td>
+                    <td><input id="pass" type="password" name="mail.pass"></td>
                 </tr>
                 <tr>
                     <td>4</td>
@@ -80,7 +77,7 @@
                 </tbody>
             </table>
             <!-- Indicates a successful or positive action -->
-            <button type="button" class="btn btn-success" onclick="testPost();">发送</button>
+            <button type="button" class="btn btn-success" onclick="sendMail();">发送</button>
         </div>
     </div>
 </form>

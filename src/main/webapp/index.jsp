@@ -34,7 +34,7 @@
             }, {
 				text : '发送邮件',
 				id : 'mail',
-				url : 'test/mail.jsp'
+				url : 'test/tool/mail.jsp'
 			} ],
 			onClick : function(node) {
 				if ($('#menu').tree('isLeaf', node.target)) {

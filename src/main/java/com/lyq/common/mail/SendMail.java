@@ -89,10 +89,8 @@ public class SendMail {
             message.addRecipient(Message.RecipientType.TO, tAddr);
 
             // 加载标题
-//            if (StringManage.isEmpty(mail.getSubject()))
-            if (!mail.getSubject().equals("")) {
+            if (!StringManage.isEmpty(mail.getSubject()))
                 mail.setSubject(mail.getSubject());
-            }
 
             BASE64Encoder enc = new BASE64Encoder();
             StringBuffer subject = new StringBuffer();
