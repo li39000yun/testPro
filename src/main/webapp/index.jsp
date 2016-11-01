@@ -31,7 +31,11 @@
                 text : 'jsonUtil',
                 id : 'jsonUtil',
                 url : 'test/json/jsonUtil.jsp'
-            } ],
+            }, {
+				text : '发送邮件',
+				id : 'mail',
+				url : 'test/mail.jsp'
+			} ],
 			onClick : function(node) {
 				if ($('#menu').tree('isLeaf', node.target)) {
 					addTab(node.text, node.url, node.id);
