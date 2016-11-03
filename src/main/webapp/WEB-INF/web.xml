@@ -13,6 +13,17 @@
     <servlet-name>MailServlet</servlet-name>
     <url-pattern>/servlet/Mail</url-pattern>
   </servlet-mapping>
+
+  <servlet>
+    <servlet-name>testServlet</servlet-name>
+    <servlet-class>com.lyq.web.servlet.HelloServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>testServlet</servlet-name>
+    <url-pattern>/hello</url-pattern>
+  </servlet-mapping>
+
   <!-- 项目起始页面 -->
   <welcome-file-list>
     <welcome-file>/index.jsp</welcome-file>

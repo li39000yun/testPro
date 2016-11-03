@@ -22,6 +22,10 @@
 					text : '数据表格',
 					id : 'datagrid',
 					url : 'test/datagrid.jsp'
+				}, {
+					text : 'freemarkerDemo',
+					id : 'freemarkerDemo',
+					url : 'hello'
 				} ]
 			}, {
 				text : '百度',

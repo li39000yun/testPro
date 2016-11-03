@@ -15,12 +15,13 @@ import java.util.Map;
  */
 public class TestFreemarker3 {
     public static void main(String[] args) throws IOException {
-        TestFreemarker3 freemark = new TestFreemarker3("/template");
+        TestFreemarker3 freemark = new TestFreemarker3("template");
         freemark.setTemplateName("freemarker.ftl");
         freemark.setFileName("doc_" + new SimpleDateFormat("yyyy-MM-dd hh-mm-ss").format(new Date()) + ".doc");
 //        freemark.setFilePath("doc\\");
         //生成word
         freemark.createWord();
+        System.out.println(TestFreemarker3.class.getClassLoader().getResource(""));
     }
 
     private void createWord() {
@@ -73,9 +74,9 @@ public class TestFreemarker3 {
     public TestFreemarker3(String templatePath) throws IOException {
         configuration = new Configuration();
         configuration.setDefaultEncoding("utf-8");
-//        configuration.setClassForTemplateLoading(this.getClass(),templatePath);
+        configuration.setClassForTemplateLoading(this.getClass(),templatePath);
         //设置FreeMarker的模版文件夹位置
-        configuration.setDirectoryForTemplateLoading(new File("D:\\java\\ideaProjects\\testPro\\src\\test\\java\\com\\lyq\\test\\freemarker" + templatePath));
+//        configuration.setDirectoryForTemplateLoading(new File("D:\\java\\ideaProjects\\testPro\\src\\test\\java\\com\\lyq\\test\\freemarker" + templatePath));
 
     }
 
