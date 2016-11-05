@@ -97,11 +97,6 @@
 		// setTimeout 在执行时,是在载入后延迟指定时间后,去执行一次表达式,仅执行一次  
 		window.setTimeout(showDT, 1000);
 	}
-	
-	$(function() {
-		var nowDate = lyq.timeUtils.getNowFormatDate();
-		$('#markDay').text(lyq.timeUtils.compareDay(nowDate, $('#markDay').text())+1);
-	});
 </script>
 <body class="easyui-layout">
 	<div data-options="region:'north',split:true" style="height:100px;">
@@ -115,7 +110,7 @@
 	<div data-options="region:'center'" style="background:#eee;">
 		<div id="tabs" class="easyui-tabs" data-options="fit:true">
 			<div title="我的桌面" data-options="iconCls:'icon-man'">
-				欢迎！<br />
+				<h3>欢迎！</h3><br />
 				<table>
 					<tr>
 						<td><label>markDay:</label>
@@ -124,10 +119,9 @@
 						</td>
 					</tr>
 				</table>
-				<a id="btn" href="javascript:void(0)" onclick="addTab('百度','http://www.baidu.com','baidu')" class="easyui-linkbutton" data-options="iconCls:'icon-add'">百度</a>
+				<hr/>
+				<%@ include file="/upgrade.jsp"%>
 			</div>
-			<div title="Tab2" data-options="closable:true">tab2</div>
-			<div title="Tab3" data-options="iconCls:'icon-reload',closable:true">tab3</div>
 		</div>
 	</div>
 </body>
