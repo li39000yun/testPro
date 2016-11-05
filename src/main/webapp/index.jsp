@@ -39,7 +39,11 @@
 				text : '发送邮件',
 				id : 'mail',
 				url : 'test/tool/mail.jsp'
-			} ],
+			}, {
+                text : 'ip查询',
+                id : 'iptool',
+                url : 'servlet/iptool'
+            } ],
 			onClick : function(node) {
 				if ($('#menu').tree('isLeaf', node.target)) {
 					addTab(node.text, node.url, node.id);
