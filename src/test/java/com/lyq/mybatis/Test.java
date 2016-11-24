@@ -19,7 +19,7 @@ public class Test {
         SqlSessionFactory ssf = new SqlSessionFactoryBuilder().build(reader);
         SqlSession session = ssf.openSession();
         try {
-            User user = (User) session.selectOne("selectUser", 1);
+            User user = (User) session.selectOne("selectUser", 2);
             System.out.println(user);
         } catch (Exception e) {
             e.printStackTrace();
