@@ -1,0 +1,35 @@
+[{
+	"id":1,
+	"text":"国资委",
+	"children":[{
+		"id":2,
+		"text":"深投控",
+		"state":"closed",
+		"children":[{
+			"text":"国信证券",
+			"checked":true
+		},{
+			"text":"深物业"
+		},{
+			"text":"深深房"
+		},{
+			"text":"深纺织",
+			"checked":true
+		},{
+			"text":"通产丽星"
+		},{
+			"text":"易图咨询"
+		}]
+	},{
+		"id":3,
+		"text":"深业集团",
+		"state":"open",
+		"children":[{
+			"text":"深圳控股",
+			"checked":true
+		},{
+			"text":"沙河股份",
+			"checked":true
+		}]
+	}]
+}]

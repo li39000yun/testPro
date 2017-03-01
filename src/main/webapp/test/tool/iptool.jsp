@@ -39,8 +39,14 @@
 </script>
 <%
     IpVO ipVO = (IpVO) request.getAttribute("ipVO");
+
+
+    String path1 = request.getContextPath();
+    String basePath1 = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path1+"/";
+
 %>
 <body>
+项目路径:<%=basePath1%>
 <form id="iptool">
     <div class="container">
         <blockquote>
