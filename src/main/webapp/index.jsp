@@ -26,6 +26,14 @@
 					text : 'freemarkerDemo',
 					id : 'freemarkerDemo',
 					url : 'hello'
+				}, {
+					text : 'ueditor',
+					id : 'ueditor',
+					url : 'test/tool/ueditor.jsp'
+				}, {
+					text : 'umditor',
+					id : 'umditor',
+					url : 'test/tool/umditor.jsp'
 				} ]
 			}, {
 				text : '百度',
@@ -85,22 +93,23 @@
 	function showDT() {// 显示时间
 		var currentDT = new Date();
 		var y, m, date, day, hs, ms, ss, theDateStr;
-		y = currentDT.getFullYear(); //四位整数表示的年份  
-		m = currentDT.getMonth() + 1; //月  
-		date = currentDT.getDate(); //日  
-		day = currentDT.getDay(); //星期  
-		hs = currentDT.getHours(); //时  
-		ms = currentDT.getMinutes(); //分  
-		ss = currentDT.getSeconds(); //秒  
+		y = currentDT.getFullYear(); //四位整数表示的年份
+		m = currentDT.getMonth() + 1; //月
+		date = currentDT.getDate(); //日
+		day = currentDT.getDay(); //星期
+		hs = currentDT.getHours(); //时
+		ms = currentDT.getMinutes(); //分
+		ss = currentDT.getSeconds(); //秒
 		theDateStr = y + "年" + m + "月" + date + "日 星期" + days[day] + " " + hs + ":" + ms + ":" + ss;
 		$('#theClock').text(theDateStr);
-		// setTimeout 在执行时,是在载入后延迟指定时间后,去执行一次表达式,仅执行一次  
+		// setTimeout 在执行时,是在载入后延迟指定时间后,去执行一次表达式,仅执行一次
 		window.setTimeout(showDT, 1000);
 	}
 </script>
 <body class="easyui-layout">
 	<div data-options="region:'north',split:true" style="height:100px;">
 		<p id="theClock" align="right"></p>
+		<util:timer></util:timer>
 	</div>
 	<div data-options="region:'south',title:'South Title',split:true,collapsed:true" style="height:100px;"></div>
 	<div data-options="region:'east',iconCls:'icon-reload',title:'East',split:true,collapsed:true" style="width:100px;"></div>

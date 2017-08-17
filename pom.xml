@@ -88,6 +88,7 @@
             <artifactId>jsoup</artifactId>
             <version>1.8.3</version>
         </dependency>
+
         <!-- commons-codec -->
         <dependency>
             <groupId>commons-codec</groupId>
@@ -178,7 +179,29 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.38</version>
         </dependency>
-
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-server -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-server</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+        <!--sitemesh-->
+        <!--<dependency>-->
+            <!--<groupId>org.sitemesh</groupId>-->
+            <!--<artifactId>sitemesh</artifactId>-->
+            <!--<version>3.0.0</version>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>opensymphony</groupId>
+            <artifactId>sitemesh</artifactId>
+            <version>2.4.2</version>
+        </dependency>
 
         <!-- 本地jar包 kingsoft -->
         <dependency>
@@ -209,6 +232,28 @@
             <version>1.0.0</version>
             <scope>system</scope>
             <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/EIESmProxyApi.jar</systemPath>
+        </dependency>
+        <!-- 本地jar包 ueditor -->
+        <dependency>
+            <groupId>com.lyq.ueditor</groupId>
+            <artifactId>ueditor</artifactId>
+            <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/ueditor.jar</systemPath>
+        </dependency>
+        <!-- 本地jar包 ueditor-mini -->
+        <dependency>
+            <groupId>com.lyq.ueditormini</groupId>
+            <artifactId>ueditormini</artifactId>
+            <version>1.0.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/ueditor-mini.jar</systemPath>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.2.2</version>
         </dependency>
     </dependencies>
     <build>

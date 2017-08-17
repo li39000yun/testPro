@@ -19,3 +19,4 @@ lyq.version = '<%=version%>';
 <script type="text/javascript" src="<%=basePath %>js/lyqExtEasyUI.js"></script>
 <%-- 引入自定义样式 --%>
 <link rel="stylesheet" href="<%=basePath%>/style/lyqExtCss.css?version=<%=version%>" type="text/css">
+<%@ taglib prefix="util" uri="/util"%>

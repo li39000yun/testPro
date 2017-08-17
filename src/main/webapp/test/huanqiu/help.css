@@ -1,0 +1,69 @@
+/*超链接样式*/
+a {
+    text-decoration: none
+}
+
+/*分割线样式*/
+hr {
+    border-color: #987cb9;
+}
+
+/*图片样式*/
+.appropriate {
+    width: 800px;
+}
+
+/*大标题样式*/
+.firstTitle {
+    font-size: 20px;
+    font-weight: bold;;
+    color: #698cba;
+}
+
+/*第二级标题样式*/
+.secondTitle {
+    font-size: 18px;
+    color: #577eb2;
+}
+
+/*正文div样式*/
+.contentDiv {
+    height: 600px;
+    width: 1100px;
+    overflow: auto;
+}
+
+/*正文非标题td样式*/
+.content td:not([class*=Title]) {
+    font-size: 13px;
+}
+
+/*菜单样式*/
+#menu {
+    background-color: lightgray;
+    padding: 10px 10px 10px 10px;
+    vertical-align: top;
+    font-size: 14px;
+    color: black;
+}
+
+/*备注表样式*/
+.remark {
+    background-color: lightgray;
+    width: 800px;;
+}
+
+/*备注表td样式*/
+.remark td {
+    vertical-align: top;
+}
+
+/*备注表感叹号，底部td样式*/
+.remark .tanhao, .bottom td {
+    text-align: right;
+}
+
+/*问答表样式*/
+.question td {
+    vertical-align: top;
+}
